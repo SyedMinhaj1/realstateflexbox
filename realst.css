@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-family: sans-serif;
+}
+
+header nav ul li a:hover {
+    font-size: 17px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+section {
+    padding: 2rem;
+}
+
+section h2{
+    padding: 0.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    
+}
+
+.property-list, .project-list, .agent-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.property-card, .project-card, .agent-card {
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 400px;
+    overflow: hidden; 
+    border-radius: 10px;
+    transition: transform 0.3s ease;  
+}
+
+.property-card:hover, .project-card:hover, .agent-card:hover {
+    transform: translateY(-4px);
+    cursor: pointer;
+    
+
+}
+.property-card img, .project-card img, .agent-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.property-card:hover .overlay, .project-card:hover .overlay, .agent-card:hover .overlay {
+    height: 50%; 
+}
+
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(4px); 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    overflow: hidden;
+    transition: height 0.3s ease, opacity 0.3s ease;
+}
+
+
+.stbtn {
+    background-color: #4f85c0;
+    color: #ffffff;
+    width: 150px;
+    height: 35px;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    opacity: 0;
+    cursor: pointer;
+    transition: height 0.3s ease, opacity 0.3s ease;
+}
+
+.property-card:hover .stbtn, .project-card:hover .stbtn, .agent-card:hover .stbtn {
+    opacity: 1; 
+}
+
+.stbtn:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: bottom;
+    bottom: 0;
+    width: 100%;
+}
+
+ @media only screen and (max-width: 1200px) {
+    .property-list, .project-list, .agent-list {
+        gap: 1.5rem;
+    }
+    .property-card, .project-card, .agent-card {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 15px;
+    }
+
+    header nav ul {
+        margin-top: 1rem;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 0.5rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .property-list, .project-list, .agent-list {
+        gap: 1rem;
+    }
+
+    .property-card, .project-card, .agent-card {
+        width: 80%;
+        height: 400px;
+    }
+
+    .property-card img, .project-card img, .agent-card img {
+        height: 200px;
+    }
+} 
